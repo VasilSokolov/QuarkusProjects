@@ -1,6 +1,5 @@
-package com.model;
+package model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.*;
 import org.hibernate.Hibernate;
 

@@ -1,13 +1,13 @@
-package com.model;
+package model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "language")
-public class Language {
+@Table(name = "country")
+public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "language_id", nullable = false)
+    @Column(name = "country_id", nullable = false)
     private Integer id;
 
     public Integer getId() {

@@ -1,4 +1,4 @@
-package com.model;
+package model;
 
 import jakarta.persistence.*;
 import org.hibernate.Hibernate;
@@ -12,6 +12,16 @@ import java.util.Objects;
 @Entity
 @Table(name = "film", schema = "sakila")
 public class Film {
+
+    public Film() {
+    }
+
+    public Film(Integer id, String title, Integer length) {
+        this.id = id;
+        this.title = title;
+        this.length = length;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "film_id", nullable = false)
@@ -26,7 +36,7 @@ public class Film {
 
     @Column(name = "release_year")
     private Integer releaseYear;
-//
+
 //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @JoinColumn(name = "language_id", nullable = false)
 //    private Language language;
@@ -129,22 +139,6 @@ public class Film {
     public void setRentalDuration(Integer rentalDuration) {
         this.rentalDuration = rentalDuration;
     }
-
-//    public Language getOriginalLanguage() {
-//        return originalLanguage;
-//    }
-//
-//    public void setOriginalLanguage(Language originalLanguage) {
-//        this.originalLanguage = originalLanguage;
-//    }
-
-//    public Language getLanguage() {
-//        return language;
-//    }
-//
-//    public void setLanguage(Language language) {
-//        this.language = language;
-//    }
 
     public Integer getReleaseYear() {
         return releaseYear;
