@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Path("/")
+@Path("/film")
 public class FilmController {
 
     @Inject
@@ -26,7 +26,7 @@ public class FilmController {
     }
 
     @GET
-    @Path("/film/{filmId}")
+    @Path("/{filmId}")
     @Produces(MediaType.TEXT_PLAIN)
     public String getFilmById(Integer filmId){
         Optional<Film> film = filmRepository.getFilm(filmId);
@@ -64,7 +64,7 @@ public class FilmController {
     public String updateFilmByRentalRate(BigDecimal rentalRate, Integer minLength){
         filmRepository.updateRentalRate(minLength, rentalRate);
 
-        return filmRepository.getFilms(minLength)
+        return filmRepository.getFilmsByMinLength(minLength)
                 .map(f -> String.format("%s (%d min) - $%f", f.getTitle(), f.getLength(), f.getRentalRate()))
                 .collect(Collectors.joining("\n"));
     }
