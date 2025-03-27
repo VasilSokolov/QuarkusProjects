@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "film", schema = "sakila")
+//@Slf4j
 public class Film {
 
     public Film() {
