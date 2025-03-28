@@ -1,3 +1,6 @@
+swagger
+http://localhost:8080/q/swagger-ui/
+
 docker for DB data
 
 docker run --platform linux/amd64 -d --publish 3306:3306 --name sakila restsql/mysql-sakila

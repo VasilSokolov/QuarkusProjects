@@ -84,7 +84,8 @@ public class FilmRepository {
         final StreamConfiguration<Film> sc = StreamConfiguration.of(Film.class)
                 .joining(Film$.actors);
         return jpaStreamer.stream(sc)
-                .filter(Film$.title.startsWith(startsWith).and(Film$.length.greaterThan(minLength)))
+                .filter(Film$.title.startsWith(startsWith)
+                        .and(Film$.length.greaterThan(minLength)))
                 .sorted(Film$.length.reversed());
     }
 
